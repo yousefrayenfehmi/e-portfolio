@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #14141f;
+    color: #ffffff;
+  }
+  
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    height: 100vh;
+    position: relative;
+    overflow: hidden; /* Pour cacher l'excès de la vague */
+  }
+  
+  .hero-text {
+    max-width: 50%;
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: fadeInUp 1.5s ease-out forwards; 
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+    color: #ffffff;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  /* Animation de la vague */
+  @keyframes wave {
+    0% {
+      transform: translateX(0) scaleY(1);
+    }
+    25% {
+      transform: translateX(-25%) scaleY(1.1);
+    }
+    50% {
+      transform: translateX(0) scaleY(1);
+    }
+    75% {
+      transform: translateX(25%) scaleY(1.1);
+    }
+    100% {
+      transform: translateX(0) scaleY(1);
+    }
+  }
+  
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100px;
+    background: #ffffff; /* Couleur de la vague */
+    border-radius: 50% 50% 0 0; /* Forme de la vague */
+    animation: wave 5s ease-in-out infinite; /* Animation de la vague */
+  }
+  
+  /* Animation du texte - glissement et fondu */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px); /* Le texte commence plus bas */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Le texte revient à sa position normale */
+    }
+  }
+  
+  .hero-image img {
+    width: 100%;
+    max-width: 500px;
+    animation: fadeInRight 2s ease-in-out;
+  }
+  
+  /* Animation du texte d'image */
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
